@@ -1,0 +1,132 @@
+---
+title: Input
+description: Inputs components for different use case.
+icon: EthernetPort
+full: true
+---
+
+### Input - Basic
+
+import Input_01 from "@/components/xui/input/input-01";
+
+<Preview link="input/input-01">
+  <Input_01 />
+</Preview>
+
+## Installation
+
+```bash
+npm install
+```
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input";
+
+export function MyComponent() {
+  return (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <label htmlFor="email">Email</label>
+      <Input type="email" id="email" placeholder="Email" />
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `type` | `string` | `"text"` | Input type (text, email, password, etc.) |
+| `placeholder` | `string` | - | Placeholder text |
+| `className` | `string` | - | Additional CSS classes |
+| `disabled` | `boolean` | `false` | Whether the input is disabled |
+| `value` | `string` | - | Input value |
+| `onChange` | `function` | - | Change handler |
+
+## Dependencies
+
+This component has no external dependencies.
+
+---
+
+### Input - Tags selector
+
+import Input_02 from "@/components/xui/input/input-02";
+
+<Preview link="input/input-02">
+  <Input_02 />
+</Preview>
+
+---
+
+### Input - File Upload
+
+import Input_03 from "@/components/xui/input/input-03";
+
+<Preview link="input/input-03">
+  <Input_03 />
+</Preview>
+
+---
+
+### Input - Number
+
+import Input_04 from "@/components/xui/input/input-04";
+
+<Preview link="input/input-04">
+  <Input_04 />
+</Preview>
+
+---
+
+### Input - Password
+
+import Input_05 from "@/components/xui/input/input-05";
+
+<Preview link="input/input-05">
+  <Input_05 />
+</Preview>
+
+---
+
+### Input - OTP Input
+
+import Input_06 from "@/components/xui/input/input-06";
+
+<Preview link="input/input-06">
+  <Input_06 />
+</Preview>
+
+---
+
+### Input - Color Picker
+
+import Input_08 from "@/components/xui/input/input-08";
+
+<Preview link="input/input-08">
+  <Input_08 />
+</Preview>
+
+---
+
+### Input - Selector
+
+import Input_09 from "@/components/xui/input/input-09";
+
+<Preview link="input/input-09">
+  <Input_09 />
+</Preview>
+
+---
+
+### Input - Mood
+
+import Input_10 from "@/components/xui/input/input-10";
+
+<Preview link="input/input-10">
+  <Input_10 />
+</Preview>
+
+---

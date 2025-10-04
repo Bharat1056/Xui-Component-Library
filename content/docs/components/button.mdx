@@ -1,0 +1,199 @@
+---
+title: Button
+description: Different design of buttons and use case.
+icon: Command
+full: true
+---
+
+## Installation
+
+```bash
+npm install @radix-ui/react-slot class-variance-authority
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export function MyComponent() {
+  return (
+    <div className="flex gap-4">
+      <Button variant="default">Default</Button>
+      <Button variant="destructive">Destructive</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop      | Type     | Default     | Description                    |
+| --------- | -------- | ----------- | ------------------------------ |
+| `variant` | `string` | `"default"` | Button style variant           |
+| `size`    | `string` | `"default"` | Button size                    |
+| `asChild` | `boolean`| `false`     | Render as child component      |
+| `className` | `string` | -           | Additional CSS classes         |
+
+### Variants
+
+- `default` - Primary button style
+- `destructive` - Destructive action style
+- `outline` - Outlined button style
+- `secondary` - Secondary button style
+- `ghost` - Ghost button style
+- `link` - Link button style
+
+### Sizes
+
+- `default` - Standard button size
+- `sm` - Small button size
+- `lg` - Large button size
+- `icon` - Icon-only button size
+
+## Dependencies
+
+This component requires the following packages:
+
+- `@radix-ui/react-slot`
+- `class-variance-authority`
+
+---
+
+### Button - Colorful
+
+import Btn15 from "@/components/xui/button/btn-15";
+
+<Preview link="button/btn-15">
+  <Btn15 />
+</Preview>
+
+---
+
+### Button - Fancy
+
+import Btn12 from "@/components/xui/button/btn-12";
+
+<Preview link="button/btn-12">
+  <Btn12 />
+</Preview>
+
+---
+
+### Button - Attract
+
+import Btn03 from "@/components/xui/button/btn-03";
+
+<Preview link="button/btn-03">
+  <Btn03 />
+</Preview>
+
+---
+
+### Button - Hold and Charge
+
+import Btn04 from "@/components/xui/button/btn-04";
+
+<Preview link="button/btn-04">
+  <Btn04 />
+</Preview>
+
+---
+
+### Button - Hold to Action
+
+import Btn05 from "@/components/xui/button/btn-05";
+
+<Preview link="button/btn-05">
+  <Btn05 />
+</Preview>
+
+---
+
+### Button - Copy
+
+import Btn06 from "@/components/xui/button/btn-06";
+
+<Preview link="button/btn-06">
+  <Btn06 />
+</Preview>
+
+---
+
+### Button - Welcome
+
+import Btn13 from "@/components/xui/button/btn-13";
+
+<Preview link="button/btn-13">
+  <Btn13 />
+</Preview>
+
+---
+
+### Button - Processing
+
+import Btn07 from "@/components/xui/button/btn-07";
+
+<Preview link="button/btn-07">
+  <Btn07 />
+</Preview>
+
+---
+
+### Button - Share
+
+import Btn08 from "@/components/xui/button/btn-08";
+
+<Preview link="button/btn-08">
+  <Btn08 />
+</Preview>
+
+---
+
+### Button - Action
+
+import Btn09 from "@/components/xui/button/btn-09";
+import { Command } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+<Preview link="button/btn-09">
+  <Btn09>
+    <Command
+      className={cn(
+        "w-4 h-4",
+        "text-zinc-600 dark:text-zinc-400",
+        "transition-all duration-300",
+        "group-hover:scale-110",
+        "group-hover:rotate-[-4deg]",
+        "group-active:scale-95"
+      )}
+    />
+    <span className="ml-2 text-sm text-zinc-600 dark:text-zinc-400">
+      CMD + K
+    </span>
+  </Btn09>
+</Preview>
+
+---
+
+### Button - Shadow
+
+import Btn10 from "@/components/xui/button/btn-10";
+
+<Preview link="button/btn-10">
+  <Btn10 />
+</Preview>
+
+---
+
+### Button - Gradiant Underline
+
+import Btn11 from "@/components/xui/button/btn-11";
+
+<Preview link="button/btn-11">
+  <Btn11 />
+</Preview>

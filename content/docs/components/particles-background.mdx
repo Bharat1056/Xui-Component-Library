@@ -1,0 +1,55 @@
+---
+title: Background Particles
+description: Particles Background with Animated Text.
+icon: Radiation
+full: true
+---
+
+import ParticlesBackground from "@/components/xui/particles-background";
+
+<Preview link="particles-background" comment={["Motion"]}>
+  <ParticlesBackground />
+</Preview>
+
+## Installation
+
+```bash
+npm install motion
+```
+
+## Usage
+
+```tsx
+import ParticlesBackground from "@/components/xui/particles-background";
+
+export function MyComponent() {
+  return (
+    <div className="relative min-h-screen">
+      <ParticlesBackground
+        title="Custom Title"
+        subtitle="Custom subtitle"
+        particleCount={1500}
+        noiseIntensity={0.002}
+        particleSize={{ min: 0.5, max: 2 }}
+      />
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `title` | `string` | `"Particles Background"` | Main title text |
+| `subtitle` | `string` | `"Make your website stand out"` | Subtitle text |
+| `particleCount` | `number` | `2000` | Number of particles to render |
+| `noiseIntensity` | `number` | `0.003` | Intensity of noise animation |
+| `particleSize` | `{ min: number, max: number }` | `{ min: 0.5, max: 2 }` | Particle size range |
+| `className` | `string` | - | Additional CSS classes |
+
+## Dependencies
+
+This component requires the following packages:
+
+- `motion` (framer-motion)

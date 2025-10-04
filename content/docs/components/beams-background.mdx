@@ -1,0 +1,55 @@
+---
+title: Beams Background
+description: Animated Beams in the Background.
+icon: Tally3
+full: true
+---
+
+import BeamsBackground from "@/components/xui/beams-background";
+
+<Preview link="beams-background" comment={["Motion"]}>
+  <BeamsBackground />
+</Preview>
+
+## Installation
+
+```bash
+npm install motion
+```
+
+## Usage
+
+```tsx
+import BeamsBackground from "@/components/xui/beams-background";
+
+export function MyComponent() {
+  return (
+    <div className="relative min-h-screen">
+      <BeamsBackground intensity="strong" />
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        <h1 className="text-4xl font-bold text-white">Your Content Here</h1>
+      </div>
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Child components |
+| `intensity` | `"subtle" \| "medium" \| "strong"` | `"strong"` | Animation intensity level |
+
+### Intensity Levels
+
+- `subtle` - Light animation with reduced opacity
+- `medium` - Moderate animation intensity
+- `strong` - Full animation intensity (default)
+
+## Dependencies
+
+This component requires the following packages:
+
+- `motion` (framer-motion)

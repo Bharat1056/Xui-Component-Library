@@ -1,0 +1,60 @@
+---
+title: Particle Button
+description: Particle Button Animation on click.
+icon: MousePointerClick
+full: true
+---
+
+import ParticleButton from "@/components/xui/particle-button";
+
+<Preview link="particle-button" comment={["Motion", "lucide-react"]}>
+  <ParticleButton successDuration={1000} variant="default">
+    Click me!
+  </ParticleButton>
+</Preview>
+
+## Installation
+
+```bash
+npm install motion lucide-react
+```
+
+## Usage
+
+```tsx
+import ParticleButton from "@/components/xui/particle-button";
+
+export function MyComponent() {
+  return (
+    <div className="flex gap-4">
+      <ParticleButton successDuration={1000} variant="default">
+        Click me!
+      </ParticleButton>
+      <ParticleButton successDuration={2000} variant="secondary">
+        Another Button
+      </ParticleButton>
+    </div>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `successDuration` | `number` | `1000` | Duration of success animation in milliseconds |
+| `variant` | `string` | `"default"` | Button variant style |
+| `className` | `string` | - | Additional CSS classes |
+| `children` | `ReactNode` | - | Button content |
+
+### Variants
+
+- `default` - Primary button style
+- `secondary` - Secondary button style
+
+## Dependencies
+
+This component requires the following packages:
+
+- `motion` (framer-motion)
+- `lucide-react`

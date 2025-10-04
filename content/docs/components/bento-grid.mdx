@@ -1,0 +1,76 @@
+---
+title: Bento Grid
+description: Bento Grid with Background Hover.
+icon: Grid2x2
+full: true
+---
+
+import BentoGrid from "@/components/xui/bento-grid";
+
+<Preview link="bento-grid" comment={["Motion", "lucide-react"]}>
+  <BentoGrid />
+</Preview>
+
+## Installation
+
+```bash
+npm install lucide-react
+```
+
+## Usage
+
+```tsx
+import BentoGrid from "@/components/xui/bento-grid";
+import { TrendingUp, CheckCircle, Video, Globe } from "lucide-react";
+
+const items = [
+  {
+    title: "Analytics Dashboard",
+    meta: "v2.4.1",
+    description: "Real-time metrics with AI-powered insights",
+    icon: <TrendingUp className="w-4 h-4 text-blue-500" />,
+    status: "Live",
+    tags: ["Statistics", "Reports", "AI"],
+    colSpan: 2,
+    hasPersistentHover: true,
+  },
+  {
+    title: "Task Manager",
+    meta: "84 completed",
+    description: "Automated workflow management",
+    icon: <CheckCircle className="w-4 h-4 text-emerald-500" />,
+    status: "Updated",
+    tags: ["Productivity", "Automation"],
+  },
+];
+
+export function MyComponent() {
+  return <BentoGrid items={items} />;
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `items` | `BentoItem[]` | `itemsSample` | Array of bento grid items |
+
+### BentoItem Interface
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `title` | `string` | - | Item title |
+| `description` | `string` | - | Item description |
+| `icon` | `ReactNode` | - | Icon component |
+| `status` | `string` | - | Status text |
+| `tags` | `string[]` | - | Array of tags |
+| `meta` | `string` | - | Meta information |
+| `cta` | `string` | - | Call to action text |
+| `colSpan` | `number` | `1` | Column span (1 or 2) |
+| `hasPersistentHover` | `boolean` | `false` | Whether hover effect is persistent |
+
+## Dependencies
+
+This component requires the following packages:
+
+- `lucide-react`

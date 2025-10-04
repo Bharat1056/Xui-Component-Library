@@ -1,0 +1,43 @@
+---
+title: Avatar Picker
+description: Avatar picker with rotation animation.
+icon: RotateCcw
+full: true
+---
+
+import AvatarPicker from "@/components/xui/avatar-picker";
+
+<Preview link="avatar-picker" comment={["Motion", "lucide-react"]}>
+  <AvatarPicker />
+</Preview>
+
+## Installation
+
+```bash
+npm install motion lucide-react
+```
+
+## Usage
+
+```tsx
+import AvatarPicker from "@/components/xui/avatar-picker";
+
+export function MyComponent() {
+  return (
+    <div className="flex items-center justify-center min-h-[200px]">
+      <AvatarPicker />
+    </div>
+  );
+}
+```
+
+## Props
+
+This component has no configurable props.
+
+## Dependencies
+
+This component requires the following packages:
+
+- `motion` (framer-motion)
+- `lucide-react`

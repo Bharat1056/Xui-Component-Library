@@ -1,0 +1,116 @@
+---
+title: Use Auto Resize Textarea
+description: Automatically adjust the height of a textarea.
+icon: Dna
+full: true
+---
+
+## Installation
+
+```bash
+npm install
+```
+
+## Usage
+
+```tsx
+import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+
+export function MyComponent() {
+  const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    minHeight: 40,
+    maxHeight: 200,
+  });
+
+  return (
+    <textarea
+      ref={textareaRef}
+      onChange={() => adjustHeight()}
+      placeholder="Type your message..."
+      className="w-full p-2 border rounded-md resize-none"
+    />
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `minHeight` | `number` | - | Minimum height of the textarea in pixels |
+| `maxHeight` | `number` | - | Maximum height of the textarea in pixels (optional) |
+
+## Returns
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| `textareaRef` | `RefObject<HTMLTextAreaElement>` | Ref to attach to the textarea element |
+| `adjustHeight` | `(reset?: boolean) => void` | Function to manually adjust the height |
+
+## Dependencies
+
+This hook has no external dependencies.
+
+## Code
+
+```jsx
+
+import { useEffect, useRef, useCallback } from "react";
+
+interface UseAutoResizeTextareaProps {
+    minHeight: number;
+    maxHeight?: number;
+}
+
+export function useAutoResizeTextarea({
+    minHeight,
+    maxHeight,
+}: UseAutoResizeTextareaProps) {
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    const adjustHeight = useCallback(
+        (reset?: boolean) => {
+            const textarea = textareaRef.current;
+            if (!textarea) return;
+
+            if (reset) {
+                textarea.style.height = `${minHeight}px`;
+                return;
+            }
+
+            // Temporarily shrink to get the right scrollHeight
+            textarea.style.height = `${minHeight}px`;
+
+            // Calculate new height
+            const newHeight = Math.max(
+                minHeight,
+                Math.min(
+                    textarea.scrollHeight,
+                    maxHeight ?? Number.POSITIVE_INFINITY
+                )
+            );
+
+            textarea.style.height = `${newHeight}px`;
+        },
+        [minHeight, maxHeight]
+    );
+
+    useEffect(() => {
+        // Set initial height
+        const textarea = textareaRef.current;
+        if (textarea) {
+            textarea.style.height = `${minHeight}px`;
+        }
+    }, [minHeight]);
+
+    // Adjust height on window resize
+    useEffect(() => {
+        const handleResize = () => adjustHeight();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [adjustHeight]);
+
+    return { textareaRef, adjustHeight };
+}
+
+```
