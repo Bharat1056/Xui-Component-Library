@@ -1290,7 +1290,7 @@ export const component: Registry = [
       "@tsparticles/engine",
       "@tsparticles/slim",
     ],
-    registryDependencies: ["sparkles-core"],
+    registryDependencies: [],
     files: [
       {
         path: "components/xui/sparkles.tsx",
