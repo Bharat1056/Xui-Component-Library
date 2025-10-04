@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Xui",
   description: "Xui is a UI library for building web applications",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

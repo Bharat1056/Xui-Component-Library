@@ -4,8 +4,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Xui - Open Source Components",
-    default: "Xui - Open Source Components",
+    template: "%s | Xui",
+    default: "Xui",
+  },
+  description: "Xui is a UI library for building web applications",
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
