@@ -1,15 +1,15 @@
-"use client"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, RefreshCw, Copy, Check } from "lucide-react"
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, RefreshCw, Copy, Check } from "lucide-react";
 
 interface CheckmarkProps {
-  size?: number
-  strokeWidth?: number
-  color?: string
-  className?: string
+  size?: number;
+  strokeWidth?: number;
+  color?: string;
+  className?: string;
 }
 
 const draw = {
@@ -20,17 +20,22 @@ const draw = {
     transition: {
       pathLength: {
         delay: i * 0.2,
-        type: "spring",
+        type: "spring" as const,
         duration: 1.5,
         bounce: 0.2,
-        ease: "easeInOut",
+        ease: easeInOut,
       },
       opacity: { delay: i * 0.2, duration: 0.2 },
     },
   }),
-}
+};
 
-export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor", className = "" }: CheckmarkProps) {
+export function Checkmark({
+  size = 100,
+  strokeWidth = 2,
+  color = "currentColor",
+  className = "",
+}: CheckmarkProps) {
   return (
     <motion.svg
       width={size}
@@ -67,33 +72,31 @@ export function Checkmark({ size = 100, strokeWidth = 2, color = "currentColor",
         }}
       />
     </motion.svg>
-  )
+  );
 }
 
 export default function CurrencyTransfer() {
-  const [copied, setCopied] = useState(false)
-  const [isHovering, setIsHovering] = useState(false)
-  const [showDetails, setShowDetails] = useState(false)
-  const [isResetting, setIsResetting] = useState(false)
+  const [copied, setCopied] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("Transaction ID: TRX-28974651")
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+    navigator.clipboard.writeText("Transaction ID: TRX-28974651");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleReset = () => {
-    setIsResetting(true)
+    setIsResetting(true);
     setTimeout(() => {
-      setIsResetting(false)
-      setShowDetails(false)
-    }, 1000)
-  }
+      setIsResetting(false);
+      setShowDetails(false);
+    }, 1000);
+  };
 
   return (
-    <Card
-      className="w-full max-w-sm mx-auto p-6 min-h-[300px] flex flex-col justify-center bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 backdrop-blur-xs relative overflow-hidden"
-    >
+    <Card className="w-full max-w-sm mx-auto p-6 min-h-[300px] flex flex-col justify-center bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 backdrop-blur-xs relative overflow-hidden">
       {/* Background pulse effect */}
       <motion.div
         className="absolute inset-0 bg-emerald-500/5 rounded-xl"
@@ -201,7 +204,8 @@ export default function CurrencyTransfer() {
                 className="flex-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-xl p-3 border border-zinc-200/50 dark:border-zinc-700/50 backdrop-blur-md"
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+                  boxShadow:
+                    "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
                   transition: { duration: 0.2 },
                 }}
                 onHoverStart={() => setIsHovering(true)}
@@ -220,7 +224,10 @@ export default function CurrencyTransfer() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         animate={isHovering ? { y: [-1, 1, -1] } : {}}
-                        transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                        transition={{
+                          duration: 1,
+                          repeat: Number.POSITIVE_INFINITY,
+                        }}
                       >
                         <title>From</title>
                         <path d="M12 19V5M5 12l7-7 7 7" />
@@ -259,7 +266,10 @@ export default function CurrencyTransfer() {
                           }
                         : {}
                     }
-                    transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Number.POSITIVE_INFINITY,
+                    }}
                   />
                   <div className="space-y-1.5">
                     <span className="text-xs font-medium text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
@@ -273,7 +283,10 @@ export default function CurrencyTransfer() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         animate={isHovering ? { y: [1, -1, 1] } : {}}
-                        transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                        transition={{
+                          duration: 1,
+                          repeat: Number.POSITIVE_INFINITY,
+                        }}
                       >
                         <title>To</title>
                         <path d="M12 5v14M5 12l7 7 7-7" />
@@ -333,16 +346,22 @@ export default function CurrencyTransfer() {
                 <div className="text-xs text-zinc-700 dark:text-zinc-300 space-y-2">
                   <div className="flex justify-between">
                     <span>Date:</span>
-                    <span className="text-zinc-900 dark:text-zinc-100">April 24, 2025</span>
+                    <span className="text-zinc-900 dark:text-zinc-100">
+                      April 24, 2025
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span>Fee:</span>
-                    <span className="text-zinc-900 dark:text-zinc-100">2.50 USD</span>
+                    <span className="text-zinc-900 dark:text-zinc-100">
+                      2.50 USD
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Transaction ID:</span>
                     <div className="flex items-center gap-1">
-                      <span className="text-zinc-900 dark:text-zinc-100">TRX-28974651</span>
+                      <span className="text-zinc-900 dark:text-zinc-100">
+                        TRX-28974651
+                      </span>
                       <motion.button
                         onClick={handleCopy}
                         whileHover={{ scale: 1.1 }}
@@ -378,7 +397,11 @@ export default function CurrencyTransfer() {
                 onClick={() => setShowDetails(!showDetails)}
               >
                 {showDetails ? "Hide Details" : "View Details"}
-                <motion.div animate={{ rotate: showDetails ? 90 : 0 }} transition={{ duration: 0.2 }} className="ml-2">
+                <motion.div
+                  animate={{ rotate: showDetails ? 90 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="ml-2"
+                >
                   <ArrowRight size={14} />
                 </motion.div>
               </Button>
@@ -387,5 +410,5 @@ export default function CurrencyTransfer() {
         </motion.div>
       </CardContent>
     </Card>
-  )
+  );
 }

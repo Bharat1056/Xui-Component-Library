@@ -3,7 +3,7 @@
 import type React from "react";
 
 import { useState, useEffect, useRef, type KeyboardEvent } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import {
   Search,
   Send,
@@ -391,7 +391,7 @@ export default function ActionSearchBar({
   };
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: -10, height: 0 },
     visible: {
       opacity: 1,
@@ -412,7 +412,7 @@ export default function ActionSearchBar({
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,

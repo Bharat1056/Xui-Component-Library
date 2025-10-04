@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { easeInOut, motion, Variants } from "framer-motion";
 import {
   Rocket,
   Code,
@@ -706,7 +706,7 @@ export default function PricingPage() {
 }
 
 // Add the Checkmark component from currency-transfer.tsx
-const draw = {
+const draw: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => ({
     pathLength: 1,
@@ -714,10 +714,10 @@ const draw = {
     transition: {
       pathLength: {
         delay: i * 0.2,
-        type: "spring",
+        type: "spring" as const,
         duration: 1.5,
         bounce: 0.2,
-        ease: "easeInOut",
+        ease: easeInOut,
       },
       opacity: { delay: i * 0.2, duration: 0.2 },
     },
