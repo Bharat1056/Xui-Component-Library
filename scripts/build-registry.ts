@@ -37,7 +37,7 @@ async function writeFileRecursive(filePath: string, data: string) {
 const getComponentFiles = async (files: File[], registryType: string) => {
   const filesArrayPromises = (files ?? []).map(async (file) => {
     if (typeof file === "string") {
-      const normalizedPath = file.startsWith("/") ? file : `/${file}`;
+      const normalizedPath = file.startsWith("/") ? file.slice(1) : file;
       const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
       const fileContent = await fs.readFile(filePath, "utf-8");
 
@@ -51,8 +51,8 @@ const getComponentFiles = async (files: File[], registryType: string) => {
       };
     }
     const normalizedPath = file.path.startsWith("/")
-      ? file.path
-      : `/${file.path}`;
+      ? file.path.slice(1)
+      : file.path;
     const filePath = path.join(REGISTRY_BASE_PATH, normalizedPath);
     const fileContent = await fs.readFile(filePath, "utf-8");
 
