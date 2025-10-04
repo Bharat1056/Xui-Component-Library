@@ -51,7 +51,7 @@ export default function PreviewContent({
 
   const handleTerminalClick = () => {
     const [folder, filename] = link.split("/");
-    const COPY = `bunx shadcn@latest add ${prePath}/x/${
+    const COPY = `npx shadcn@latest add ${prePath}/x/${
       filename ? filename : folder
     }.json`;
     navigator.clipboard.writeText(COPY);
@@ -189,7 +189,7 @@ export default function PreviewContent({
                   )}
                 />
               )}
-              <span>bunx shadcn add {getFileName()}</span>
+              <span>npx shadcn add {getFileName()}</span>
             </Button>
 
             {!isBlock && (
