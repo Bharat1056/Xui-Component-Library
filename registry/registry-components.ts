@@ -1298,4 +1298,21 @@ export const component: Registry = [
       },
     ],
   },
+  {
+    name: "sparkles-core",
+    type: "registry:component",
+    dependencies: [
+      "motion",
+      "@tsparticles/react",
+      "@tsparticles/engine",
+      "@tsparticles/slim",
+    ],
+    registryDependencies: [],
+    files: [
+      {
+        path: "components/ui/sparkles.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ];
