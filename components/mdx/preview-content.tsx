@@ -51,7 +51,7 @@ export default function PreviewContent({
 
   const handleTerminalClick = () => {
     const [folder, filename] = link.split("/");
-    const COPY = `npx shadcn@latest add ${prePath}/x/${
+    const COPY = `npx shadcn@latest add ${prePath}/r/${
       filename ? filename : folder
     }.json`;
     navigator.clipboard.writeText(COPY);

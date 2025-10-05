@@ -19,7 +19,7 @@ export function OpenInV0Button({
       asChild
     >
       <a
-        href={`https://v0.dev/chat/api/open?url=${prePath}/x/${name}.json`}
+        href={`https://v0.dev/chat/api/open?url=${prePath}/r/${name}.json`}
         target="_blank"
         rel="noreferrer"
       >
