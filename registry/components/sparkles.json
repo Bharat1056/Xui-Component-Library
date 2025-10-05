@@ -1,0 +1,17 @@
+{
+  "name": "sparkles",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "components/xui/sparkles.tsx",
+      "type": "registry:component"
+    }
+  ],
+  "dependencies": [
+    "motion",
+    "@tsparticles/react",
+    "@tsparticles/engine",
+    "@tsparticles/slim"
+  ],
+  "registryDependencies": ["sparkles-core"]
+}
