@@ -5,6 +5,7 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { ThemeProvider } from "next-themes";
 import { AuroraGradientBackground } from "@/components/ui/aurora-gradient-background";
 import { Inter, Instrument_Serif, Dancing_Script } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +72,7 @@ export default function RootLayout({
             </AuroraGradientBackground>
           </ThemeProvider>
         </RootProvider>
+        <Analytics />
       </body>
     </html>
   );
