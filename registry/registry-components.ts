@@ -1293,6 +1293,10 @@ export const component: Registry = [
     registryDependencies: [],
     files: [
       {
+        path: "components/ui/sparkles.tsx",
+        type: "registry:component",
+      },
+      {
         path: "components/xui/sparkles.tsx",
         type: "registry:component",
       },
