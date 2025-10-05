@@ -7,7 +7,9 @@
     "@tsparticles/engine",
     "@tsparticles/slim"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "sparkles-core"
+  ],
   "files": [
     {
       "type": "registry:component",
