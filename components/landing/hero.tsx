@@ -15,20 +15,14 @@ export function HeroSection() {
         transition={{ duration: 0.6 }}
         className="max-w-5xl mx-auto space-y-8"
       >
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-[var(--font-instrument-serif)] tracking-tight leading-tight text-zinc-900 dark:text-zinc-100">
-          Think{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 dark:from-emerald-400 dark:via-teal-400 dark:to-green-400 font-[var(--font-dancing-script)] italic">
-            boldly
-          </span>{" "}
-          and Design{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 dark:from-green-400 dark:via-emerald-400 dark:to-teal-400 font-[var(--font-dancing-script)] text-6xl sm:text-7xl lg:text-8xl relative italic">
-            beautifully
-          </span>
-          ,
-          <br />
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-[var(--font-instrument-serif)] tracking-tight leading-tight text-zinc-900 dark:text-zinc-100">
           Build{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500 dark:from-emerald-400 dark:via-teal-400 dark:to-green-400 font-[var(--font-dancing-script)] italic">
+            fast
+          </span>
+          , Design{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-green-500 to-emerald-500 dark:from-teal-400 dark:via-green-400 dark:to-emerald-400 font-[var(--font-dancing-script)] italic">
-            powerfully
+            smart
           </span>{" "}
           with{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 dark:from-emerald-400 dark:via-green-400 dark:to-teal-400 font-[var(--font-instrument-serif)] italic">
