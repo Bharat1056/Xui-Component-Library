@@ -13,8 +13,8 @@ interface PreviewProps {
   isBlock?: boolean;
 }
 
-const prePath = process.env.PRODUCTION_URL
-  ? `https://${process.env.PRODUCTION_URL}`
+const prePath = process.env.NEXT_PUBLIC_PRODUCTION_URL
+  ? `https://${process.env.NEXT_PUBLIC_PRODUCTION_URL}`
   : "http://localhost:3000";
 
 export function Preview({
